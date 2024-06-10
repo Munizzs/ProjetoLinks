@@ -1,0 +1,47 @@
+*{ /* Usa o seletor universal para resetar as modificações padrão. */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./assets/bg-mobile.jpg); /*Adiociona a imagem ao fundo, com a function url que procura nossa imagem em algum lugar.*/
+  background-repeat: no-repeat; /*Não repete a imagem de fundo.*/
+  background-position: top center; /*Coloca a imagem de fun ao centro com foco no topo.*/
+  background-size: cover; /*Preenche todo espaço com a imagem*/
+
+  /* Em uma linha/Atalho
+    background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  */
+}
+
+body * { /* Seletor universal, tudo que é inserido é feito para o todo o body. */
+  font-family: 'Inter', sans-serif; /* Definindo a fonte dos textos. */
+  color: #fff; /* Definido a cor dos textos */
+}
+
+#container { /* Chamada do seletor id "container */
+  /* border: 1px solid red;  cria uma linha de 1px solida de cor vermelha */
+  width: 360px; /* Definido uma largura de 360px */
+  /*height: 712px;  Definido uma altura de 712px */
+  margin: auto; /* Definindo uma margem automatica tanto para esquerda tanto para direita. */
+  
+  margin-top: 56px; /* Inserido no topo um espaçamento de 56px */
+}
+
+/* Tipos de display: elementos inline fluem como texto, enquanto elementos block se expandem para a largura total disponível e empurram outros elementos para baixo.*/
+
+#profile{
+  text-align: center; /* foi chamado o id pai e alinhou os elementos para o centro */
+  padding: 24px; /* Adicionado um espaçamento de 24 pixeis. */
+}
+
+#profile img{
+  width: 112px;
+}
+
+#profile p{  
+  font-weight: 500; /* Deixa o texto em negrito */
+  line-height: 24px; /* Altura de linha */
+  margin-top: 8px; /* Inserido no topo uma margem de 8px */
+}
