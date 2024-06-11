@@ -1,4 +1,5 @@
-*{ /* Usa o seletor universal para resetar as modificações padrão. */
+* {
+  /* Usa o seletor universal para resetar as modificações padrão. */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,33 +16,99 @@ body {
   */
 }
 
-body * { /* Seletor universal, tudo que é inserido é feito para o todo o body. */
-  font-family: 'Inter', sans-serif; /* Definindo a fonte dos textos. */
+body * {
+  /* Seletor universal, tudo que é inserido é feito para o todo o body. */
+  font-family: "Inter", sans-serif; /* Definindo a fonte dos textos. */
   color: #fff; /* Definido a cor dos textos */
 }
 
-#container { /* Chamada do seletor id "container */
+#container {
+  /* Chamada do seletor id "container */
   /* border: 1px solid red;  cria uma linha de 1px solida de cor vermelha */
   width: 360px; /* Definido uma largura de 360px */
   /*height: 712px;  Definido uma altura de 712px */
   margin: auto; /* Definindo uma margem automatica tanto para esquerda tanto para direita. */
-  
+
   margin-top: 56px; /* Inserido no topo um espaçamento de 56px */
 }
 
 /* Tipos de display: elementos inline fluem como texto, enquanto elementos block se expandem para a largura total disponível e empurram outros elementos para baixo.*/
 
-#profile{
+#profile {
   text-align: center; /* foi chamado o id pai e alinhou os elementos para o centro */
   padding: 24px; /* Adicionado um espaçamento de 24 pixeis. */
 }
 
-#profile img{
+#profile img {
   width: 112px;
 }
 
-#profile p{  
+#profile p {
   font-weight: 500; /* Deixa o texto em negrito */
   line-height: 24px; /* Altura de linha */
   margin-top: 8px; /* Inserido no topo uma margem de 8px */
+}
+
+/* Links */
+
+ul {
+  list-style: none; /* Removido os estilos da lista */
+
+  display: flex; /* faz com que o item ocupe todo espaço disponivel em linha */
+  flex-direction: column; /* Direciona esses itens em coluna */
+  gap: 16px; /* Deixa um espaço de 16px entre cada item */
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center; /* Alinha os itens na horizontal */
+  justify-items: center; /* Alinha os itens na vertical */
+
+  padding: 16px 24px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px; /* Arredondamento das bordas */
+
+  backdrop-filter: blur(
+    4px
+  ); /* Embaça o elemento (alguns browser não aceita é necessaro usar "-webkit-" antes do backdrop */
+
+  text-decoration: none; /* Linha sublinhada removida */
+  font-weight: 500;
+
+  transition: background 0.2s; /* Faz uma transição do background */
+}
+
+/* pseu-selector */
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1.5px solid white;
+}
+
+#social-link {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-link a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-link a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 16px;
 }
