@@ -9,3 +9,7 @@ function toggleMode() {
 
   html.classList.toggle("Light") /*Acontece a mesma coisa que a condição só que mais simples */
 }
+
+function soon(){
+  alert("Em breve")
+}
