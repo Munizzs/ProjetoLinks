@@ -1,5 +1,7 @@
 # Projeto Links
 
+<img src="./image/ProjectLinksImage.jpg" alt="Imagem do projeto" width="150" height="150">
+
 Este é um projeto que desenvolvi utilizando HTML, CSS e JavaScript. Ele consiste em uma tela com botões que contêm links personalizados e a funcionalidade de alternar entre os temas claro e escuro.
 
 ## Funcionalidades
