@@ -7,5 +7,5 @@ function toggleMode() {
     html.classList.add("light")
   } */
 
-    html.classList.toggle("light") /*Acontece a mesma coisa que a condição só que mais simples */
+  html.classList.toggle("Light") /*Acontece a mesma coisa que a condição só que mais simples */
 }
