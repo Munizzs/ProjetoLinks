@@ -5,8 +5,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* defini constantes com seus valores */
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-houver: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.02);
+  --switch-bg-url: url(./assets/MoonStars.svg);
+}
+
+.Light {
+  /* constantes para a função claro */
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.07);
+  --surface-color-houver: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/Sun.svg);
+}
+
 body {
-  background-image: url(./assets/bg-mobile.jpg); /*Adiociona a imagem ao fundo, com a function url que procura nossa imagem em algum lugar.*/
+  background-image: var(--bg-url); /*Adiociona a imagem ao fundo, com a function url que procura nossa imagem em algum lugar.*/
   background-repeat: no-repeat; /*Não repete a imagem de fundo.*/
   background-position: top center; /*Coloca a imagem de fun ao centro com foco no topo.*/
   background-size: cover; /*Preenche todo espaço com a imagem*/
@@ -14,26 +36,31 @@ body {
   /* Em uma linha/Atalho
     background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
   */
+
+  height: 100vh;
+
 }
 
 body * {
   /* Seletor universal, tudo que é inserido é feito para o todo o body. */
   font-family: "Inter", sans-serif; /* Definindo a fonte dos textos. */
-  color: #fff; /* Definido a cor dos textos */
+  color: var(--text-color); /* Definido a cor dos textos */
 }
 
 #container {
   /* Chamada do seletor id "container */
   /* border: 1px solid red;  cria uma linha de 1px solida de cor vermelha */
-  width: 360px; /* Definido uma largura de 360px */
+  width: 360px; /* Definido uma largura de 100% */
+  max-width: 588px; /* a largura maxima é de 588px */
   /*height: 712px;  Definido uma altura de 712px */
   margin: auto; /* Definindo uma margem automatica tanto para esquerda tanto para direita. */
 
-  margin-top: 56px; /* Inserido no topo um espaçamento de 56px */
+  margin-top: 15px; /* Inserido no topo um espaçamento de 56px */
 }
 
 /* Tipos de display: elementos inline fluem como texto, enquanto elementos block se expandem para a largura total disponível e empurram outros elementos para baixo.*/
 
+/* Profile */
 #profile {
   text-align: center; /* foi chamado o id pai e alinhou os elementos para o centro */
   padding: 24px; /* Adicionado um espaçamento de 24 pixeis. */
@@ -47,6 +74,42 @@ body * {
   font-weight: 500; /* Deixa o texto em negrito */
   line-height: 24px; /* Altura de linha */
   margin-top: 8px; /* Inserido no topo uma margem de 8px */
+}
+
+/* Switch */
+
+#switch {
+  position: relative; /* a posição esta relativa a posição absoluta do botão */
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute; /* Esta em um posicionamento absoluto */
+  top: 50%;
+  z-index: 1; /* Esta em uma nova camada do "layout" */
+  transform: translateY(-50%);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 32px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.Light #switch button{
+  right: 0;
+  left: initial;
 }
 
 /* Links */
@@ -68,8 +131,8 @@ ul li a {
 
   padding: 16px 24px;
 
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
   border-radius: 8px; /* Arredondamento das bordas */
 
   backdrop-filter: blur(
@@ -84,21 +147,20 @@ ul li a {
 
 /* pseu-selector */
 ul li a:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--surface-color-houver);
   border: 1.5px solid white;
 }
 
 #social-link {
   display: flex;
   justify-content: center;
-  gap: 32px;
 
   padding: 24px 0;
 
   font-size: 24px;
 }
 
-#social-link a{
+#social-link a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,6 +171,22 @@ ul li a:hover {
 }
 
 #social-link a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--highlight-color);
   padding: 16px;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center; /* alinha o texto ao centro */
+  font-size: 14px;
+}
+
+@media (min-width: 700px){
+  :root{
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .Light{
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
