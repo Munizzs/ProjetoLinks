@@ -8,7 +8,7 @@
 :root {
   /* defini constantes com seus valores */
   --text-color: white;
-  --bg-url: url(./assets/bg-stars-mobile.jpg);
+  --bg-url: url(./assets/bg-mobile-.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-houver: rgba(0, 0, 0, 0.02);
@@ -19,7 +19,7 @@
 .Light {
   /* constantes para a função claro */
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-lighttt.jpg);
+  --bg-url: url(./assets/bg-mobile-l.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.07);
   --surface-color-houver: rgba(0, 0, 0, 0.2);
@@ -28,7 +28,9 @@
 }
 
 body {
-  background-image: var(--bg-url); /*Adiociona a imagem ao fundo, com a function url que procura nossa imagem em algum lugar.*/
+  background-image: var(
+    --bg-url
+  ); /*Adiociona a imagem ao fundo, com a function url que procura nossa imagem em algum lugar.*/
   background-repeat: no-repeat; /*Não repete a imagem de fundo.*/
   background-position: top center; /*Coloca a imagem de fun ao centro com foco no topo.*/
   background-size: cover; /*Preenche todo espaço com a imagem*/
@@ -38,7 +40,6 @@ body {
   */
 
   height: 100vh;
-
 }
 
 body * {
@@ -94,7 +95,7 @@ body * {
   top: 50%;
   z-index: 1; /* Esta em uma nova camada do "layout" */
   transform: translateY(-50%);
-  
+
   animation: slide-back 0.4s;
 }
 
@@ -109,11 +110,11 @@ body * {
   border-radius: 9999px;
 }
 
-.Light #switch button{
+.Light #switch button {
   animation: slide-in 0.4s forwards; /* Aplica a ani,açõa criada | "forwards" mantem as alterações */
 }
 
-#switch button:hover{
+#switch button:hover {
   outline: 8px solid var(--highlight-color);
 }
 
@@ -186,30 +187,31 @@ footer {
   font-size: 14px;
 }
 
-@media (min-width: 700px){
-  :root{
+@media (min-width: 700px) {
+  :root {
     --bg-url: url(./assets/teste-desktop.jpg);
   }
 
-  .Light{
+  .Light {
     --bg-url: url(./assets/bg-light-desk.jpg);
   }
 }
 
-@keyframes slide-in{ /* cria uma animação */
-  from{
+@keyframes slide-in {
+  /* cria uma animação */
+  from {
     left: 0;
   }
-  to{
+  to {
     left: 50%;
   }
 }
 
-@keyframes slide-back{
-  from{
+@keyframes slide-back {
+  from {
     left: 50%;
   }
-  to{
+  to {
     left: 0;
   }
 }
